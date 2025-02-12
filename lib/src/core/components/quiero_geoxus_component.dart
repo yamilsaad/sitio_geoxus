@@ -16,7 +16,7 @@ class QuieroGeoxusComponent extends StatelessWidget {
       onPressed: () {},
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.white,
-        backgroundColor: Colors.amber[800], // Color del texto
+        //backgroundColor: Colors.black87, // Color del texto
       ),
       child: SizedBox(
         width: screenWidth * 0.15,

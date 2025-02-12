@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:geoxus_web/src/presentation/mobile/views/inicio_mobile_view.dart';
-import 'package:geoxus_web/src/presentation/mobile/views/mobile_view.dart';
-import 'package:geoxus_web/src/presentation/views/view.dart';
 import 'package:geoxus_web/src/presentation/widgets/drawer_widget.dart';
 import 'package:get/get.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class EmpresaScreen extends StatelessWidget {
+  const EmpresaScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
-      //backgroundColor: const Color(0xff1A1A1D),
       appBar: AppBar(
         scrolledUnderElevation: 0.0,
         automaticallyImplyLeading: false, // Oculta la flecha de regreso
@@ -42,48 +37,33 @@ class HomePage extends StatelessWidget {
       endDrawer: DrawerWidget(screenWidth: screenWidth),
       body: LayoutBuilder(builder: (context, contraints) {
         if (contraints.maxWidth > 650) {
-          return _DesktopView();
+          return _EmpresaDesktop();
         } else {
-          return _MobileView();
+          return _EmpresaMobile();
         }
       }),
     );
   }
 }
 
-///Drawer end.
-
-class _DesktopView extends StatelessWidget {
-  const _DesktopView({super.key});
+class _EmpresaMobile extends StatelessWidget {
+  const _EmpresaMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [InicioView(), DetalleView(), FooterView()],
-        ),
-      ),
+      color: Colors.black12,
     );
   }
 }
 
-class _MobileView extends StatelessWidget {
-  const _MobileView({super.key});
+class _EmpresaDesktop extends StatelessWidget {
+  const _EmpresaDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        children: [
-          InicioMobileView(),
-          EventoMobileView(),
-          TecnologiaMobileView(),
-          FooterMobileView()
-        ],
-      ),
+    return Container(
+      color: Colors.black,
     );
   }
 }
