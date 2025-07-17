@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:geoxus_web/src/presentation/mobile/views/inicio_mobile_view.dart';
-import 'package:geoxus_web/src/presentation/mobile/views/mobile_view.dart';
-import 'package:geoxus_web/src/presentation/views/view.dart';
-import 'package:geoxus_web/src/presentation/widgets/drawer_widget.dart';
 import 'package:get/get.dart';
+//Importacion de Archivos
+import 'package:geoxus_web/src/presentation/widgets/drawer_widget.dart';
+import 'package:geoxus_web/src/presentation/mobile/views/mobile_view.dart';
+import 'package:geoxus_web/src/config/themes/responsive.dart';
+
+import '../web/views/web_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,34 +16,8 @@ class HomePage extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      //backgroundColor: const Color(0xff1A1A1D),
-      appBar: AppBar(
-        scrolledUnderElevation: 0.0,
-        automaticallyImplyLeading: false, // Oculta la flecha de regreso
-        elevation: 0.0,
-        toolbarHeight: screenHeight * 0.12,
-        title: GestureDetector(
-          onTap: () {
-            Get.toNamed('/'); // Navega a la página de inicio
-          },
-          child: SizedBox(
-            height: screenHeight * 0.2,
-            width: screenWidth * 0.45,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Image.asset(
-                  'assets/img/logo/logo_geoxus1.webp',
-                  fit: BoxFit.cover,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      endDrawer: DrawerWidget(screenWidth: screenWidth),
       body: LayoutBuilder(builder: (context, contraints) {
-        if (contraints.maxWidth > 650) {
+        if (contraints.maxWidth > Responsive.mobileBreakpoint) {
           return _DesktopView();
         } else {
           return _MobileView();
@@ -62,7 +38,13 @@ class _DesktopView extends StatelessWidget {
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
-          children: [InicioView(), DetalleView(), FooterView()],
+          children: [
+            InicioWebView(),
+            SegundaWebView(),
+            TerceraWebView(),
+            CuartaWebView(),
+            FooterWebView(),
+          ],
         ),
       ),
     );
@@ -79,9 +61,10 @@ class _MobileView extends StatelessWidget {
       child: Column(
         children: [
           InicioMobileView(),
-          EventoMobileView(),
-          TecnologiaMobileView(),
-          FooterMobileView()
+          SegundaMobileView(),
+          TerceraMobileView(),
+          CuartaMobileView(),
+          FooterMobileView(),
         ],
       ),
     );

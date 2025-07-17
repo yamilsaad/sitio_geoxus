@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:geoxus_web/src/config/themes/responsive.dart';
 
-class FooterMobileView extends StatelessWidget {
-  const FooterMobileView({super.key});
+class FooterWebView extends StatelessWidget {
+  const FooterWebView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,17 +10,17 @@ class FooterMobileView extends StatelessWidget {
     return Container(
       width: responsive.width,
       padding: EdgeInsets.symmetric(
-        horizontal: 16.0,
-        vertical: 24.0,
+        horizontal: responsive.isMobile ? 16.0 : 32.0,
+        vertical: 32.0,
       ),
       color: Colors.black,
       child: Text(
-        'Footer (Mobile)',
+        'Footer (Web)',
         style: TextStyle(
           color: Colors.white,
-          fontSize: responsive.isMobile ? 16 : 20,
+          fontSize: responsive.isMobile ? 16 : 22,
         ),
       ),
     );
   }
-}
+} 
