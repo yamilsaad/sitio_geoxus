@@ -41,7 +41,7 @@ class InicioWebView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  child: const Text('Contacto',
+                  child: const Text('Ver Demo',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 ),
@@ -72,21 +72,21 @@ class InicioWebView extends StatelessWidget {
                               color: AppColors.white,
                             ),
                             children: const [
-                              TextSpan(text: 'GEOXUS '),
+                              TextSpan(text: 'Releva '),
                               TextSpan(
-                                  text: 'Product',
+                                  text: 'Eventos ',
                                   style: TextStyle(color: AppColors.primary)),
-                              TextSpan(text: ' is\n'),
-                              TextSpan(text: 'built by great '),
+                              TextSpan(text: ' en tiempo real\n'),
+                              TextSpan(text: 'Integra tu primer '),
                               TextSpan(
-                                  text: 'teams',
+                                  text: 'SLI',
                                   style: TextStyle(color: AppColors.primary)),
                             ],
                           ),
                         ),
                         const SizedBox(height: 24),
                         Text(
-                          'We help build and manage a team of world-class developers\nto bring your vision to life',
+                          'Una Solución Logística Integral para la gestión de eventos y servicios públicos y privados.',
                           style: TextStyle(
                             fontSize: responsive.isMobile ? 16 : 22,
                             color: AppColors.white,
@@ -118,7 +118,7 @@ class InicioWebView extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 32.0),
                         child: Image.asset(
-                          'assets/img/logo/imagen_inicio.webp', // Ilustración del hero section
+                          'assets/img/logo/logo_geoxus1.webp', // Ilustración del hero section
                           height: responsive.height * 0.75,
                           width: responsive.width * 0.75,
                           fit: BoxFit.contain,
